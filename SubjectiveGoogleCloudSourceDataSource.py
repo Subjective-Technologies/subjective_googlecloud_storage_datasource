@@ -70,13 +70,15 @@ class SubjectiveGoogleCloudSourceDataSource(SubjectiveDataSource):
 
     # ------------------ New Methods ------------------
     def get_icon(self):
-        """Return the SVG code for the Google Cloud Source icon."""
-        return """
-<svg viewBox="0 0 24 24" fill="none" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-  <path d="M12 2L2 12h3v5h14v-5h3L12 2z" fill="#4285F4"/>
-  <text x="50%" y="70%" font-size="5" fill="white" text-anchor="middle" alignment-baseline="middle">GCS</text>
-</svg>
-        """
+        """Return SVG icon content, preferring a local icon.svg in the plugin folder."""
+        icon_path = os.path.join(os.path.dirname(__file__), 'icon.svg')
+        try:
+            if os.path.exists(icon_path):
+                with open(icon_path, 'r', encoding='utf-8') as f:
+                    return f.read()
+        except Exception:
+            pass
+        return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L2 12h3v5h14v-5h3L12 2z" fill="#4285F4"/></svg>'
 
     def get_connection_data(self):
         """
