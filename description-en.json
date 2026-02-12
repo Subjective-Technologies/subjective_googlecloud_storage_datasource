@@ -1,4 +1,5 @@
 {
+  "description": "Enumerates Google Cloud Source repositories for a project and clones them locally for code indexing and automation workflows.",
   "domainCategory": "Cloud & DevOps",
   "subjectiveTechnologyElement": "DataSources",
   "publisher": "BrainBoost Ltd.",
@@ -9,7 +10,7 @@
     {
       "type": "splitList",
       "title": "Google Cloud Source",
-      "text": "A Subjective data source for google cloud source.",
+      "text": "Enumerates Google Cloud Source repositories for a project and clones them locally for code indexing and automation workflows.",
       "image": {
         "src": "/subjective_googlecloud_storage_datasource/icon.svg",
         "alt": "Google Cloud Source icon"
